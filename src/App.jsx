@@ -11,6 +11,7 @@ function App() {
   useEffect(() => {
     getGuitars().then((data) => {
       setGuitars(data)
+      console.log(data);
     }).catch((err) => {
       console.log(err)
     })

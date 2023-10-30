@@ -12,11 +12,14 @@ const useContentful = () => {
 
     const getGuitars = async () => {
         try{
+            // getEntries is a method from the client that returns all the entries from the contentful space
+            // https://www.contentful.com/developers/docs/javascript/tutorials/using-js-cda-sdk/
             const entries = await client.getEntries({
                 content_type: 'guitars',
                 select: 'fields'
             });
 
+            // We are sanitizing the data from the entries to only get the fields we need
             const sanitizedEntries = entries.items.map((entry) => {
                 const brand = entry.fields.brand
                 const description = entry.fields.description
@@ -29,6 +32,7 @@ const useContentful = () => {
                 }
             })
 
+            // return entries
             return sanitizedEntries
 
         }catch(err){
