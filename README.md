@@ -1,7 +1,3 @@
-Certainly! Here's the documentation in the requested format for your Contentful CMS integration project:
-
----
-
 # Contentful CMS Integration: Building a Dynamic Web Application
 
 ## Introduction
